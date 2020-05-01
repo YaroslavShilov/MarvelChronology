@@ -7,13 +7,34 @@ function Chronology(props) {
   return (
     <div className={s.chronology}>
 	    <section className={'wrap'}>
-		    
 		    <div className={s.row}>
 			    <Item/>
-			    
+
 			    <span className={s.line}></span>
 			    <div></div>
 		    </div>
+
+		    <div className={s.row}>
+			    <Item/>
+
+			    <span className={s.line}></span>
+			    <div></div>
+		    </div>
+
+		    <div className={s.row}>
+			    <Item/>
+
+			    <span className={s.line}></span>
+			    <div></div>
+		    </div>
+
+		    <div className={s.row}>
+			    <Item/>
+
+			    <span className={s.line}></span>
+			    <div></div>
+		    </div>
+		    
 		    
 	    </section>
 	    
