@@ -1,0 +1,52 @@
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em;
+}
+
+@mixin placecolor($color: #000000) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder {
+		color: $color;
+	}
+	&::-moz-placeholder {
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin vertical-gradient($top-color: #ffffff, $bottom-color: #000000) {
+	background-color: $top-color;
+	background-image: linear-gradient(to bottom, $top-color, $bottom-color);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$top-color, EndColorStr=$bottom-color);
+}
+
+@mixin horizontal-gradient($left-color: #ffffff, $right-color: #000000) {
+	background: linear-gradient(left, $left-color 0%, $right-color 100%);
+}
+
+@mixin absolute-center {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+
+@mixin position($type, $top, $right, $bottom, $left) {
+	top: $top;
+	left: $left;
+	right: $right;
+	bottom: $bottom;
+	position: $type;
+}
+
+@mixin size($size) {
+	width: $size;
+	height: $size;
+}
