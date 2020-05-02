@@ -4,13 +4,13 @@ import {Header} from "../Header/header";
 import {Footer} from "../Footer/Footer";
 import Chronology from "../Chronology/Chronology";
 
-function App() {
+function App({state, getComics}) {
 	
   return (
     <div className={s.app}>
       <Header />
       <main>
-	      <Chronology/>
+	      <Chronology {...{state, getComics}}/>
       </main>
       <Footer />
     </div>
