@@ -24,7 +24,6 @@ export async function getComics(title, num) {
 	const urlName = store.getUrlNameComics(title);
 	const url = `1111https://gateway.marvel.com:443/v1/public/comics?title=${urlName}&issueNumber=${num}&apikey=c6633ad6a8d5b89011bbcb78acab94ea\n`;
 	
-	
 	//BEGIN function limitIsOver
 	let limitIsOver = (boolean, item = '') => {
 		let number;
@@ -52,21 +51,6 @@ export async function getComics(title, num) {
 	
 	//BEGIN function changeStore
 	let returnComics = (dataObj) => {
-		/*if(!store.getState()[title]) {
-			store.getState()[title] = {
-				title,
-				items: [],
-			}
-		}
-
-		if(!store.getState()[title].items) {
-			store.getState()[title].items = [];
-		}
-
-		let items = store.getState()[title].items;
-		store.getState()[title].items = [...items, dataObj]
-
-		return store.getState()*/
 		return {
 			title,
 			items: [dataObj]
@@ -91,12 +75,6 @@ export async function getComics(title, num) {
 	
 	
 
-	getUrl().then(rev => {
-		console.log('normal - ', returnComics(rev))
-		return returnComics(rev);
-	}).catch(err => {
-		console.log('err - ', returnComics(limitIsOver(true)))
-		return returnComics(limitIsOver(true))
-	})
+	return getUrl().then(rev => returnComics(rev)).catch(err => limitIsOver(true))
 	
 }

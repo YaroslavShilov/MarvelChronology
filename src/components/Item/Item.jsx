@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Item.module.scss';
 
 const Item = (props) => {
-
+	console.log('props: ', props);
 	return (
 
 		<article className={s.item}>
