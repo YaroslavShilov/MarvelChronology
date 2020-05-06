@@ -1,35 +1,46 @@
 import React from 'react';
 import s from './Item.module.scss';
 
-const Item = (props) => {
-	console.log('props: ', props);
-	return (
+class Item extends React.Component {
 
-		<article className={s.item}>
 
-			<h2 className={s.title}>Spider Man</h2>
-			<p className={s.num}>#1 - #13</p>
+	render() {
+		const  {title, number, till,  desc, link, thumb} = this.props;
+		
+		
+		
+		return (
 
-			<figure className={s.cont}>
+			<article className={s.item}>
 
-				<img src='#' alt="Image"/>
+				<h2 className={s.title}>{title}</h2>
+				{till ?
+					<p className={s.num}>#{number} - #{till}</p>: 
+					<p className={s.num}>#{number} - last</p>
+					
+				}
+				<figure className={s.cont}>
 
-				<figcaption className={s.desc}>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dolorum fuga hic incidunt iusto quae quaerat quasi quo quos sed sit, tempore ullam. Ducimus eaque explicabo modi quam rem! Quaerat.
+					<img src={thumb} alt={title}/>
 
-					<p className={s.desc_link}>
-						<a href="#">Read more</a>
-					</p>
-				</figcaption>
+					<figcaption className={s.desc}>
+						{desc}
 
-			</figure>
+						<p className={s.desc_link}>
+							<a href={link}>Read more</a>
+						</p>
+					</figcaption>
 
-			<div className={s.arrow}>
-				<span className={s.arrow_point}></span>
-			</div>
+				</figure>
 
-		</article>
-	);
+				<div className={s.arrow}>
+					<span className={s.arrow_point}></span>
+				</div>
+
+			</article>
+		);
+	}
+	
 
 }
 
