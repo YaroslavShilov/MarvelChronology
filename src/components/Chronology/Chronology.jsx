@@ -13,13 +13,6 @@ const Chronology = (props) => {
 						state={props.state}
 						getComics={props.getComics}
 					/>
-					
-					{/*{this.comics('Ultimate X-Men', 1, 6)}*/}
-					{/*{this.comics('Ultimate X-Men', 7, 14)}*/}
-					{/*{this.comics('Ultimate X-Men', 7, 14)}*/}
-					{/*{this.comics('Ultimate X-Men', 7, 14)}*/}
-					{/*{this.comics('Ultimate X-Men', 7, 14)}*/}
-					{/*{this.comics('Ultimate X-Men', 7, 14)}*/}
 				</section>
 
 

@@ -14,10 +14,9 @@ class Item extends React.Component {
 			<article className={s.item}>
 
 				<h2 className={s.title}>{title}</h2>
-				{till ?
-					<p className={s.num}>#{number} - #{till}</p>: 
-					<p className={s.num}>#{number} - last</p>
-					
+				{till 
+					? <p className={s.num}>#{number} - #{till}</p>
+					: <p className={s.num}>#{number} - last</p>
 				}
 				<figure className={s.cont}>
 

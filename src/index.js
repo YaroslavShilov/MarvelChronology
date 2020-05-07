@@ -6,10 +6,10 @@ import './globalStyle/basic.scss'
 
 
 import App from './components/app/App';
-import {getComics, store} from "./store/store";
+
 
 
 ReactDOM.render(
-  <App {...{state: store.getState(), getComics}}/>,
+  <App />,
   document.getElementById('root')
 );

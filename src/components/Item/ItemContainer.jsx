@@ -1,12 +1,12 @@
 import React from 'react';
 import Item from "./Item";
+import {store} from "../../store/store";
 
 class ItemContainer extends React.Component {
 	
 	constructor(props) {
 		super(props);
-		this.state = props.state
-		this.comics = {
+		this.state = {
 			title: '',
 			num: '',
 			till: '',
@@ -16,13 +16,27 @@ class ItemContainer extends React.Component {
 		}
 		this.title = props.title;
 		this.number = props.num
-		this.getComics = props.getComics;
 	}
 	
 
 	addComics = (title, num) => {
+		store.getComics(title, num).then(() => {
+			
+			this.setState(state => {
+				let copyState = store.getState();
+				let comics = copyState[title].items.filter(i => i.number === num);
+				
+				return {
+					title: title,
+					...comics,
+				}
+			})
+		});
+		//BEGIN change this.comics
+		
+		//END change this.comics
 
-		if(!this.state[title]) {
+		/*if(!this.state[title]) {
 			this.setState(state => {
 				return {
 					...state,
@@ -32,24 +46,21 @@ class ItemContainer extends React.Component {
 					}
 				}
 			})
-		}
+		}*/
 
-		this.getComics(title, num).then((comics) => {
-			console.log('state after get: ', this.state);
-			console.log('comics: ', comics)
+		
+			/*.then((comics) => {
 
 			let changeState = true;
 
 			this.state[title].items.forEach((i) => {
 				if(i.number === comics.number) {
-					console.log("we don't need to change this state")
 					changeState = false;
 				}
 			});
 
 			if(changeState) {
 				this.setState((state) => {
-					console.log('change state');
 					let copyState = {...state};
 					copyState[title] = {...state[title]};
 					copyState[title].items = [...state[title].items, comics];
@@ -64,9 +75,8 @@ class ItemContainer extends React.Component {
 					return {...copyState}
 				});
 			}
-			console.log(this.state)
 			
-		})
+		})*/
 
 	};
 	
@@ -77,7 +87,7 @@ class ItemContainer extends React.Component {
 	render() {
 		return (
 			<Item
-				{...this.comics}
+				{...this.state}
 			/>
 		);
 	}
