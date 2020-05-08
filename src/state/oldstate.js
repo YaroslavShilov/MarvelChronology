@@ -1,3 +1,5 @@
+
+//This code is for if I won't be able to create normal reducer 
 export let store = {
 	_state: {},
 	_comicsNameUrl: {
@@ -20,13 +22,13 @@ export let store = {
 	getUrlComics(title) {
 		return this._comicsNameUrl[title];
 	},
-	
 	getComics: async (title, num) => {
-		
+
 		this.getState();
-		
+
 		//BEGIN function limitIsOver (if our limit of API is over)
 		let limitIsOver = (boolean, item = '') => {
+			
 			let number;
 			let desc;
 			let thumb;
@@ -62,12 +64,12 @@ export let store = {
 			}
 		}
 		//END function getJson
-		
+
 		//BEGIN addComics
 		let addComics = () => {
 			const urlName = this.getUrlComics(title);
 			const url = `111https://gateway.marvel.com:443/v1/public/comics?title=${urlName}&issueNumber=${num}&apikey=${this.API_KEY}\n`;
-			
+
 			getJson(url).catch(err => limitIsOver(true)).then((comics) => {
 				//BEGIN change this.state
 				let copyState = {...this._state};
@@ -75,10 +77,10 @@ export let store = {
 				copyState[title].items = [...this._state[title].items, ...comics];
 				this._state = {...copyState};
 			})
-			
+
 		}
 		//END addComics
-		
+
 		//BEGIN check this comics (maybe we already have this comics)
 		if(!this._state[title]) {
 			//if we don't have this series, we add title of this series
@@ -99,5 +101,5 @@ export let store = {
 			//*TODO you need to return this comics */
 		}
 		//END check this comics 
-	} 
+	}
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from "./Item";
-import {store} from "../../store/store";
+import {state} from "../../state/state";
 
 class ItemContainer extends React.Component {
 	
