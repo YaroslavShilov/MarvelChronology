@@ -1,2 +1,52 @@
-@import 'src/globalStyle/vars';
+//@import 'src/globalStyle/vars';
 
+.item {
+	display: flex;
+	justify-content: flex-end;
+	&.__even {
+		justify-content: flex-start;
+		.item_main {
+			order: 1;
+			justify-content: flex-start;
+		}
+		.item_hollow {
+			order: 0;
+		}
+		.item_cont {
+			order: 1;
+		}
+		.item_img {
+			order: 0;
+		}
+	}
+	&_main {
+		flex: 0 0 600px;
+		display: flex;
+		justify-content: flex-end;
+		width: 600px;
+		color: #fff;
+	}
+	&_cont {
+		padding: 10px;
+	}
+	
+	&_img {
+		flex: 0 0 180px;
+		img {
+			width: 100%;
+		}
+	}
+	
+	&_desc {
+		padding-top: 10px;
+	}
+	&_link {
+		display: block;
+		padding-top: 10px;
+	}
+	
+	&_hollow {
+		flex: 0 1 50%;
+		display: flex;
+	}
+}

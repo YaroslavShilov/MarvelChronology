@@ -1,46 +1,39 @@
-import React from 'react';
+import React from "react";
 import s from './Item.module.scss';
 
-class Item extends React.Component {
+export default (props) => {
+	
+	
+	const  {title, from, desc, thumb, link, till,} = props;
+	
+	const classModif = props.even && s.__even;
+	
+	return (
+		<div className={`${s.item} ${classModif}`}>
+			<article className={s.item_main}>
+				<div className={s.item_cont}>
+					<h2 className={s.item_title}>{title}</h2>
+					<p className={s.num}>#{from} - {till}</p>
 
-
-	render() {
-		const  {title, number, till,  desc, link, thumb} = this.props;
-		
-		
-		
-		return (
-
-			<article className={s.item}>
-
-				<h2 className={s.title}>{title}</h2>
-				{till 
-					? <p className={s.num}>#{number} - #{till}</p>
-					: <p className={s.num}>#{number} - last</p>
-				}
-				<figure className={s.cont}>
-
-					<img src={thumb} alt={title}/>
-
-					<figcaption className={s.desc}>
+					<p className={s.item_desc}>
 						{desc}
-
-						<p className={s.desc_link}>
-							<a href={link}>Read more</a>
-						</p>
-					</figcaption>
-
-				</figure>
-
-				<div className={s.arrow}>
-					<span className={s.arrow_point}></span>
+						<span className={s.item_link}>
+						<a href={link} target={'_blank'} rel="noopener noreferrer">Read more</a>
+					</span>
+					</p>
 				</div>
 
+				<div className={s.item_img}>
+					<img src={thumb} alt={title}/>
+				</div>
+
+				<div className={s.item_arrow}>
+					<span className={s.item_point}></span>
+				</div>
 			</article>
-		);
-	}
-	
+			
+			<div className={s.item_hollow}></div>
 
+		</div>
+	)
 }
-
-export default Item;

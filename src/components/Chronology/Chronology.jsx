@@ -5,17 +5,16 @@ import ItemContainer from "../Item/ItemContainer";
 const Chronology = (props) => {
 	return (
 			<div className={s.chronology}>
-				<section className={'wrap'}>
+				<div className={'wrap'}>
 					
-					<ItemContainer 
-						title={'Ultimate X-Men'} 
-						num={1} 
-						state={props.state}
-						getComics={props.getComics}
-					/>
-				</section>
-
-
+					<section className={s.chronology_main}>
+						<ItemContainer
+							chronology={props.chronology}
+							state={props.state}
+						/>
+					</section>
+					
+				</div>
 			</div>
 		);
  
