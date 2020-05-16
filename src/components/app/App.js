@@ -2,62 +2,44 @@ import React, {useEffect, useState} from 'react';
 import s from './App.module.scss';
 import {Header} from "../Header/header";
 import {Footer} from "../Footer/Footer";
-import Chronology from "../Chronology/Chronology";
-import {data} from "../../state/state"
+import {store} from "../../store/store"
+import {chronology} from "../../store/chronology";
+import {API_KEY} from "../../api/apiKey";
+import {Context} from "../../context/context";
+import ItemContainer from "../Item/ItemContainer";
 
-function App(props) {
 
-	//BEGIN state
-	const [state, setState] = useState({...data});
-	
+function App() {
 
-	const API_KEY = 'c6633ad6a8d5b89011bbcb78acab94ea';
-	
-	const comicsNameUrl = {
-		'All-New Ultimates': 'All-New%20Ultimates',
-		'Hunger': 'Hunger',
-		'Miles Morales: Ultimate Spider-Man': 'Miles%20Morales%3A%20Ultimate%20Spider-Man',
-		'Spider-Men': 'Spider-Men',
-		'Ultimate Comics Spider-Man': 'Ultimate%20Comics%20Spider-Man',
-		'Ultimate Comics Ultimates': 'Ultimate%20Comics%20Ultimates',
-		'Ultimate Comics X-Men': 'Ultimate%20Comics%20X-Men',
-		'Ultimate Fantastic Four': 'Ultimate%20Fantastic%20Four',
-		'Ultimate Spider-Man': 'Ultimate%20Spider-Man%20',
-		'Ultimate X-Men': 'Ultimate%20X-Men',
-	}
-
-	const getComicsUrl = title => comicsNameUrl[title];
+	const [state, setState] = useState({...store.state});
 
 	function getComics(title, number) {
-
-		//const title = action.title;
-		//const number = action.number;
-		const urlName = getComicsUrl(title);
+		console.log('getComics')
+		const urlName = store.getComicsUrl(title);
 		const url = `111https://gateway.marvel.com:443/v1/public/comics?title=${urlName}&issueNumber=${number}&apikey=${API_KEY}\n`;
 		
-		//BEGIN check this comics (maybe we already have this comics)
-		//if we don't have this series, we add title of this series
-		if(!state[title] || !state[title].filter(i => i.number === number)) {
+		
+		//if we don't have this comics or number of this comics we add it
+		if(!state[title]) {
+			addComics();
+		} else if (state[title].filter(i => i.number === number).length === 0) {
 			addComics();
 		}
-		//END check this comics
 
-		//BEGIN addComics
 		function addComics() {
 			getJson(url)
 				.catch(defaultComics)
 				.then((comics) => {
 					setState((state) => {
-						return state[title] 
+						return state[title]
 							? {...state, [title]: [...state[title], {...comics}]}
 							: {...state, [title]: [{...comics}] }
 					})
 				})
-
 		}
-		//END addComics
-		
+
 		function defaultComics() {
+			//use it if we can't get a comics from API
 			return {
 				number,
 				desc: 'Sorry, but limit of Marvel API request is over. You can see Images later, after give a new limit request',
@@ -65,15 +47,13 @@ function App(props) {
 				link: 'https://www.marvel.com/',
 			}
 		}
-		
+
 		//BEGIN function getJson
 		async function getJson() {
 			const response = await fetch(url);
 			const json = await response.json();
-
-			if(json.data.results[0]) {
-				//return limitIsOver(false, json.data.results[0]);
-				const item = json.data.results[0];
+			const  item = json.data.results[0];
+			if(item) {
 				return {
 					number,
 					desc: item.description,
@@ -86,33 +66,6 @@ function App(props) {
 		}
 		//END function getJson
 	}
-	//END state
-	
-	//BEGIN chronology
-	const chronology = [
-		{
-			title: 'Ultimate Spider-Man',
-			from: 1,
-			till: 13,
-		},
-		{
-			title: 'Ultimate X-Men',
-			from: 1,
-			till: 6,
-		},
-		{
-			title: 'Ultimate Spider-Man',
-			from: 14,
-			till: 21,
-		},
-		{
-			title: 'Ultimate X-Men',
-			from: 7,
-			till: 14,
-		},
-	]
-	//END chronology
-	
 	
 	
 	useEffect(() => {
@@ -120,6 +73,10 @@ function App(props) {
 			getComics(i.title, i.from)
 		})
 	}, [])
+	
+	
+	
+	
 
 	
 	
@@ -127,16 +84,18 @@ function App(props) {
 	
 	
   return (
-    <div className={s.app}>
-      <Header />
-      <main>
-	      <Chronology 
-		      chronology={chronology}
-		      state={state}
-	      />
-      </main>
-      <Footer />
-    </div>
+  	<Context.Provider value={{
+  		state,
+		  chronology,
+	  }}>
+	    <div className={s.app}>
+	      <Header />
+	      <main>
+		      <ItemContainer />
+	      </main>
+	      <Footer />
+	    </div>
+	  </Context.Provider>
   );
 }
 

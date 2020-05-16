@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Item from "./Item";
+import {Context} from "../../context/context";
 
-export default (props) => {
+export default () => {
 	
-
+	const {state, chronology} = useContext(Context)
 	
 	
-	const comics = props.chronology.map((i, inx) => {
+	const comics = chronology.map((i, inx) => {
 		const even = (inx+1) % 2 === 0;
 
 		let number = i.from;
@@ -15,8 +16,8 @@ export default (props) => {
 		let link = 'https://www.marvel.com/';
 		
 
-		if(props.state[i.title]) {
-			let comics = props.state[i.title].filter(j => j.number === i.from)
+		if(state[i.title]) {
+			let comics = state[i.title].filter(j => j.number === i.from)
 			if(comics.length === 1) {
 				number = comics[0].number;
 				desc = comics[0].desc;

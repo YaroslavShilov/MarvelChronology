@@ -3,6 +3,7 @@
 .item {
 	display: flex;
 	justify-content: flex-end;
+	/*BEGIN .item -> &.__even*/
 	&.__even {
 		justify-content: flex-start;
 		.item_main {
@@ -19,6 +20,8 @@
 			order: 0;
 		}
 	}
+	/*END .item -> &.__even*/
+	
 	&_main {
 		flex: 0 0 600px;
 		display: flex;
