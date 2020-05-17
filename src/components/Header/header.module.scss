@@ -1,16 +1,17 @@
 @import 'src/globalStyle/vars';
 
 .header {
-	background-color: $bg;
-	padding: 20px 0 22px;
-}
-.main {
-	display: flex;
-	align-items: center;
-}
-.title {
-	flex: 1 1 auto;
-	font-size: 40px;
-	color: $title;
-	text-align: center;
+	background-color: $title;
+	padding: 10px 0 2px;
+	&_main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	&_logo {
+		display: block;
+		width: 450px;
+		
+	}
 }

@@ -10,6 +10,7 @@ export default (props) => {
 	
 	return (
 		<div className={`${s.item} ${classModif}`}>
+			
 			<article className={s.item_main}>
 				<div className={s.item_cont}>
 					<h2 className={s.item_title}>{title}</h2>

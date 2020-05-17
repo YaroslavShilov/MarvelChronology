@@ -89,11 +89,13 @@ function App() {
 		  chronology,
 	  }}>
 	    <div className={s.app}>
-	      <Header />
-	      <main>
-		      <ItemContainer />
-	      </main>
-	      <Footer />
+		    <div className={s.app_bg}>
+			    <Header />
+			    <main>
+				    <ItemContainer />
+			    </main>
+			    <Footer />
+		    </div>
 	    </div>
 	  </Context.Provider>
   );

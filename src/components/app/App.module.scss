@@ -1,8 +1,11 @@
 @import 'src/globalStyle/vars';
 
 .app {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	background-color: $bg2;
+	background: url('./bg.jpg') left top repeat;
+	&_bg {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		background-color: rgba(#000, .90);
+	}
 }
