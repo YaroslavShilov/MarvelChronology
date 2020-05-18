@@ -1,55 +1,129 @@
-//@import 'src/globalStyle/vars';
+@import 'src/globalStyle/vars';
+@import 'src/globalStyle/mixins';
 
 .item {
 	display: flex;
 	justify-content: flex-end;
-	/*BEGIN .item -> &.__even*/
-	&.__even {
-		justify-content: flex-start;
-		.item_main {
-			order: 1;
-			justify-content: flex-start;
-		}
-		.item_hollow {
-			order: 0;
-		}
-		.item_cont {
-			order: 1;
-		}
-		.item_img {
-			order: 0;
-		}
-	}
-	/*END .item -> &.__even*/
-	
-	&_main {
-		flex: 0 0 600px;
-		display: flex;
-		justify-content: flex-end;
-		width: 600px;
-		color: #fff;
-	}
-	&_cont {
-		padding: 10px;
-	}
-	
-	&_img {
-		flex: 0 0 180px;
-		img {
-			width: 100%;
-		}
-	}
-	
-	&_desc {
-		padding-top: 10px;
-	}
-	&_link {
-		display: block;
-		padding-top: 10px;
-	}
-	
-	&_hollow {
-		flex: 0 0 50%;
-		display: flex;
+}
+
+/*BEGIN .main */
+.main {
+	position: relative;
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	width: 600px;
+	padding-right: 150px;
+	color: $title;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: -1px;
+		z-index: 1;
+		width: 2px;
+		height: 100%;
+		background-color: $title;
 	}
 }
+/*END .main */
+.cont {
+	padding: 10px;
+}
+
+.img {
+	flex: 0 0 180px;
+	height: 270px;
+	border: 2px solid $title;
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: 266px;
+	}
+}
+
+.desc {
+	padding-top: 10px;
+}
+.link {
+	display: block;
+	padding-top: 10px;
+}
+
+.hollow {
+	flex: 0 0 50%;
+	display: flex;
+}
+.point {
+	position: absolute;
+	top: 70%;
+	right: -8px;
+	z-index: 2;
+	@include size(16px);
+	background-color: black;
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 3px $title;
+}
+.arrow {
+	position: absolute;
+	top: 50%;
+	right: 75px;
+	width: 75px;
+	height: 2px;
+	margin-top: -1px;
+	background-color: $title;
+}
+.arrow:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 99%;
+	width: 100px;
+	height: 2px;
+	margin-top: -1px;
+	background-color: $title;
+	border-radius: 3px;
+	transform: rotate(41deg);
+	transform-origin: left center;
+}
+
+/*BEGIN .item.__even*/
+.item.__even {
+	justify-content: flex-start;
+	.main {
+		order: 1;
+		justify-content: flex-start;
+		padding-right: 0;
+		padding-left: 150px;
+	}
+	.main:after {
+		right: auto;
+		left: -1px;
+	}
+	.cont {
+		order: 1;
+	}
+	.img {
+		order: 0;
+	}
+	.point {
+		right: auto;
+		left: -8px;
+	}
+	.arrow {
+		right: auto;
+		left: 75px;
+	}
+	.arrow:after {
+		left: auto;
+		right: 99%;
+		margin-top: -1px;
+		transform: rotate(-41deg);
+		transform-origin: right center;
+	}
+	.hollow {
+		order: 0;
+	}
+}
+/*END .item.__even*/

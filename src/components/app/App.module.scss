@@ -2,10 +2,13 @@
 
 .app {
 	background: url('./bg.jpg') left top repeat;
-	&_bg {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		background-color: rgba(#000, .90);
-	}
+}
+.bg {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-color: rgba(#000, .9);
+}
+.main {
+	padding: 100px;
 }

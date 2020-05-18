@@ -5,7 +5,6 @@ import {Footer} from "../Footer/Footer";
 import {store} from "../../store/store"
 import {chronology} from "../../store/chronology";
 import {API_KEY} from "../../api/apiKey";
-import {Context} from "../../context/context";
 import ItemContainer from "../Item/ItemContainer";
 
 
@@ -84,20 +83,18 @@ function App() {
 	
 	
   return (
-  	<Context.Provider value={{
-  		state,
-		  chronology,
-	  }}>
-	    <div className={s.app}>
-		    <div className={s.app_bg}>
-			    <Header />
-			    <main>
-				    <ItemContainer />
-			    </main>
-			    <Footer />
-		    </div>
+    <div className={s.app}>
+	    <div className={s.bg}>
+		    <Header />
+		    <main className={s.main}>
+			    <ItemContainer
+			      state={state}
+			      chronology={chronology}
+			    />
+		    </main>
+		    <Footer />
 	    </div>
-	  </Context.Provider>
+    </div>
   );
 }
 

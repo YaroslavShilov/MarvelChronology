@@ -11,29 +11,28 @@ export default (props) => {
 	return (
 		<div className={`${s.item} ${classModif}`}>
 			
-			<article className={s.item_main}>
-				<div className={s.item_cont}>
-					<h2 className={s.item_title}>{title}</h2>
+			<article className={s.main}>
+				<div className={s.cont}>
+					<h2 className={s.title}>{title}</h2>
 					<p className={s.num}>#{from} - {till}</p>
 
-					<p className={s.item_desc}>
+					<p className={s.desc}>
 						{desc}
-						<span className={s.item_link}>
+						<span className={s.link}>
 						<a href={link} target={'_blank'} rel="noopener noreferrer">Read more</a>
 					</span>
 					</p>
 				</div>
 
-				<div className={s.item_img}>
+				<div className={s.img}>
 					<img src={thumb} alt={title}/>
 				</div>
 
-				<div className={s.item_arrow}>
-					<span className={s.item_point}></span>
-				</div>
+				<span className={s.arrow}></span>
+				<span className={s.point}></span>
 			</article>
 			
-			<div className={s.item_hollow}></div>
+			<div className={s.hollow}></div>
 
 		</div>
 	)
