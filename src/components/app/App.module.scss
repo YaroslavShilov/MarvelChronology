@@ -1,7 +1,7 @@
 @import 'src/globalStyle/vars';
 
 .app {
-	background: url('./bg.jpg') left top repeat;
+	background: fixed url('./bg.jpg') left top repeat;
 }
 .bg {
 	display: flex;

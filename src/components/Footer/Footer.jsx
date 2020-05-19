@@ -5,7 +5,9 @@ export function Footer(props) {
 	return (
 		<footer className={s.footer}>
 			<div className="wrap">
-				I'm footer
+				<a href="https://github.com/YaroslavShilov" target={'__blank'}>Yaroslav Shilov</a>
+				and
+				<a href="https://developer.marvel.com/" target={'__blank'}>MarvelAPI</a>
 			</div>
 		</footer>
 	)

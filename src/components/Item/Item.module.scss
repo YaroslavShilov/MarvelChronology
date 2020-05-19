@@ -29,6 +29,7 @@
 }
 /*END .main */
 .cont {
+	flex: 1 1 auto;
 	padding: 10px;
 }
 
@@ -37,6 +38,11 @@
 	height: 270px;
 	border: 2px solid $title;
 	overflow: hidden;
+	transition: all $time;
+	z-index: 2;
+	&:hover {
+		transform: scale(2, 2);
+	}
 	img {
 		width: 100%;
 		height: 266px;
@@ -127,3 +133,19 @@
 	}
 }
 /*END .item.__even*/
+
+/*BEGIN .item.__first */
+.item.__first {
+  .main:after {
+	  top: 70%;
+  }
+}
+/*END .item.__first */
+
+/*BEGIN .item.__last */
+.item.__last {
+	.main:after {
+		top: -30%;
+	}
+}
+/*END .item.__last */

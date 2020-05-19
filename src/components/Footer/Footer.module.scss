@@ -3,5 +3,14 @@
 .footer {
 	overflow: hidden;
 	margin-top: auto;
-	background-color: $bg;
+	padding: 20px 0;
+	background-color: $title;
+	text-align: center;
+	a {
+		margin: 0 10px;
+		color: lighten(black, 30%);
+	}
+	a:hover {
+		color: black;
+	}
 }

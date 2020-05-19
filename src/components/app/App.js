@@ -15,7 +15,7 @@ function App() {
 	function getComics(title, number) {
 		console.log('getComics')
 		const urlName = store.getComicsUrl(title);
-		const url = `111https://gateway.marvel.com:443/v1/public/comics?title=${urlName}&issueNumber=${number}&apikey=${API_KEY}\n`;
+		const url = `https://gateway.marvel.com:443/v1/public/comics?title=${urlName}&issueNumber=${number}&apikey=${API_KEY}\n`;
 		
 		
 		//if we don't have this comics or number of this comics we add it

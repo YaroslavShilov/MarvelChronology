@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './header.module.scss';
 import logo from './logo.png';
+import {Link} from "react-router-dom";
 
 export function Header(props) {
 	return (
@@ -13,9 +14,9 @@ export function Header(props) {
 						<span></span>
 					</div>*/}
 					<h1 className={'vis-hid'}>The ultimate marvel chronology</h1>
-					<a href="#" className={s.header_logo}>
+					<Link to="/" className={s.header_logo}>
 						<img src={logo} alt="The ultimate marvel chronology"/>
-					</a>
+					</Link>
 					{/*<form action="" className={s.search}>
 						<button></button>
 					</form>*/}

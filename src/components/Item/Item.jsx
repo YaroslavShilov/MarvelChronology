@@ -1,15 +1,16 @@
 import React from "react";
 import s from './Item.module.scss';
+import Button from "../../UI/Button/Button";
 
-export default (props) => {
+export default ({even, first, last, title, from, desc, thumb, link, till}) => {
 	
-	
-	const  {title, from, desc, thumb, link, till,} = props;
-	
-	const classModif = props.even && s.__even;
+	let cls = ``;
+	if(even) {cls += ` ${s.__even}`}
+	if(first) {cls += ` ${s.__first}`}
+	if(last) {cls += ` ${s.__last}`}
 	
 	return (
-		<div className={`${s.item} ${classModif}`}>
+		<div className={`${s.item} ${cls}`}>
 			
 			<article className={s.main}>
 				<div className={s.cont}>
@@ -18,9 +19,11 @@ export default (props) => {
 
 					<p className={s.desc}>
 						{desc}
-						<span className={s.link}>
-						<a href={link} target={'_blank'} rel="noopener noreferrer">Read more</a>
-					</span>
+					</p>
+					<p className={s.link}>
+						<Button>
+							<a href={link} target={'_blank'} rel="noopener noreferrer">Read more</a>
+						</Button>
 					</p>
 				</div>
 
