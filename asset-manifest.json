@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/YaroslavShilov.github.io/Chronology/static/css/main.8068b07f.chunk.css",
-    "main.js": "/YaroslavShilov.github.io/Chronology/static/js/main.6fe9f1d3.chunk.js",
-    "main.js.map": "/YaroslavShilov.github.io/Chronology/static/js/main.6fe9f1d3.chunk.js.map",
-    "runtime-main.js": "/YaroslavShilov.github.io/Chronology/static/js/runtime-main.8ab5d79a.js",
-    "runtime-main.js.map": "/YaroslavShilov.github.io/Chronology/static/js/runtime-main.8ab5d79a.js.map",
-    "static/js/2.f9c62f52.chunk.js": "/YaroslavShilov.github.io/Chronology/static/js/2.f9c62f52.chunk.js",
-    "static/js/2.f9c62f52.chunk.js.map": "/YaroslavShilov.github.io/Chronology/static/js/2.f9c62f52.chunk.js.map",
-    "index.html": "/YaroslavShilov.github.io/Chronology/index.html",
-    "precache-manifest.b7cbd572acd72dcf3acf6213d696032f.js": "/YaroslavShilov.github.io/Chronology/precache-manifest.b7cbd572acd72dcf3acf6213d696032f.js",
-    "service-worker.js": "/YaroslavShilov.github.io/Chronology/service-worker.js",
-    "static/css/main.8068b07f.chunk.css.map": "/YaroslavShilov.github.io/Chronology/static/css/main.8068b07f.chunk.css.map",
-    "static/js/2.f9c62f52.chunk.js.LICENSE.txt": "/YaroslavShilov.github.io/Chronology/static/js/2.f9c62f52.chunk.js.LICENSE.txt",
-    "static/media/fonts.scss": "/YaroslavShilov.github.io/Chronology/static/media/ComingSoon-Regular.cbca34c9.ttf",
-    "static/media/App.module.scss": "/YaroslavShilov.github.io/Chronology/static/media/bg.3bd16766.jpg",
-    "static/media/logo.png": "/YaroslavShilov.github.io/Chronology/static/media/logo.5b39fa88.png"
+    "main.css": "/Chronology/static/css/main.4dbc4179.chunk.css",
+    "main.js": "/Chronology/static/js/main.6fe9f1d3.chunk.js",
+    "main.js.map": "/Chronology/static/js/main.6fe9f1d3.chunk.js.map",
+    "runtime-main.js": "/Chronology/static/js/runtime-main.88c6a823.js",
+    "runtime-main.js.map": "/Chronology/static/js/runtime-main.88c6a823.js.map",
+    "static/js/2.f9c62f52.chunk.js": "/Chronology/static/js/2.f9c62f52.chunk.js",
+    "static/js/2.f9c62f52.chunk.js.map": "/Chronology/static/js/2.f9c62f52.chunk.js.map",
+    "index.html": "/Chronology/index.html",
+    "precache-manifest.f1cafdd759dd25a0a89c55567eae8743.js": "/Chronology/precache-manifest.f1cafdd759dd25a0a89c55567eae8743.js",
+    "service-worker.js": "/Chronology/service-worker.js",
+    "static/css/main.4dbc4179.chunk.css.map": "/Chronology/static/css/main.4dbc4179.chunk.css.map",
+    "static/js/2.f9c62f52.chunk.js.LICENSE.txt": "/Chronology/static/js/2.f9c62f52.chunk.js.LICENSE.txt",
+    "static/media/fonts.scss": "/Chronology/static/media/ComingSoon-Regular.cbca34c9.ttf",
+    "static/media/App.module.scss": "/Chronology/static/media/bg.3bd16766.jpg",
+    "static/media/logo.png": "/Chronology/static/media/logo.5b39fa88.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.8ab5d79a.js",
+    "static/js/runtime-main.88c6a823.js",
     "static/js/2.f9c62f52.chunk.js",
-    "static/css/main.8068b07f.chunk.css",
+    "static/css/main.4dbc4179.chunk.css",
     "static/js/main.6fe9f1d3.chunk.js"
   ]
 }
