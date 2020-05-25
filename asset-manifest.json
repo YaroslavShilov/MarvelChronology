@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Chronology/static/css/main.4dbc4179.chunk.css",
-    "main.js": "/Chronology/static/js/main.6fe9f1d3.chunk.js",
-    "main.js.map": "/Chronology/static/js/main.6fe9f1d3.chunk.js.map",
-    "runtime-main.js": "/Chronology/static/js/runtime-main.88c6a823.js",
-    "runtime-main.js.map": "/Chronology/static/js/runtime-main.88c6a823.js.map",
-    "static/js/2.f9c62f52.chunk.js": "/Chronology/static/js/2.f9c62f52.chunk.js",
-    "static/js/2.f9c62f52.chunk.js.map": "/Chronology/static/js/2.f9c62f52.chunk.js.map",
-    "index.html": "/Chronology/index.html",
-    "precache-manifest.f1cafdd759dd25a0a89c55567eae8743.js": "/Chronology/precache-manifest.f1cafdd759dd25a0a89c55567eae8743.js",
-    "service-worker.js": "/Chronology/service-worker.js",
-    "static/css/main.4dbc4179.chunk.css.map": "/Chronology/static/css/main.4dbc4179.chunk.css.map",
-    "static/js/2.f9c62f52.chunk.js.LICENSE.txt": "/Chronology/static/js/2.f9c62f52.chunk.js.LICENSE.txt",
-    "static/media/fonts.scss": "/Chronology/static/media/ComingSoon-Regular.cbca34c9.ttf",
-    "static/media/App.module.scss": "/Chronology/static/media/bg.3bd16766.jpg",
-    "static/media/logo.png": "/Chronology/static/media/logo.5b39fa88.png"
+    "main.css": "/MarvelChronology/static/css/main.20ef63ac.chunk.css",
+    "main.js": "/MarvelChronology/static/js/main.6fe9f1d3.chunk.js",
+    "main.js.map": "/MarvelChronology/static/js/main.6fe9f1d3.chunk.js.map",
+    "runtime-main.js": "/MarvelChronology/static/js/runtime-main.72148d26.js",
+    "runtime-main.js.map": "/MarvelChronology/static/js/runtime-main.72148d26.js.map",
+    "static/js/2.f9c62f52.chunk.js": "/MarvelChronology/static/js/2.f9c62f52.chunk.js",
+    "static/js/2.f9c62f52.chunk.js.map": "/MarvelChronology/static/js/2.f9c62f52.chunk.js.map",
+    "index.html": "/MarvelChronology/index.html",
+    "precache-manifest.a40dc1ea0a970a1417cdb3990fa43615.js": "/MarvelChronology/precache-manifest.a40dc1ea0a970a1417cdb3990fa43615.js",
+    "service-worker.js": "/MarvelChronology/service-worker.js",
+    "static/css/main.20ef63ac.chunk.css.map": "/MarvelChronology/static/css/main.20ef63ac.chunk.css.map",
+    "static/js/2.f9c62f52.chunk.js.LICENSE.txt": "/MarvelChronology/static/js/2.f9c62f52.chunk.js.LICENSE.txt",
+    "static/media/fonts.scss": "/MarvelChronology/static/media/ComingSoon-Regular.cbca34c9.ttf",
+    "static/media/App.module.scss": "/MarvelChronology/static/media/bg.3bd16766.jpg",
+    "static/media/logo.png": "/MarvelChronology/static/media/logo.5b39fa88.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.88c6a823.js",
+    "static/js/runtime-main.72148d26.js",
     "static/js/2.f9c62f52.chunk.js",
-    "static/css/main.4dbc4179.chunk.css",
+    "static/css/main.20ef63ac.chunk.css",
     "static/js/main.6fe9f1d3.chunk.js"
   ]
 }
