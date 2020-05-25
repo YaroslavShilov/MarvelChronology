@@ -1,7 +1,5 @@
-@import 'src/globalStyle/vars';
-
 .header {
-	background-color: $title;
+	background-color: white;
 	padding: 10px 0 2px;
 	&_main {
 		display: flex;
@@ -12,6 +10,5 @@
 	&_logo {
 		display: block;
 		width: 450px;
-		
 	}
 }

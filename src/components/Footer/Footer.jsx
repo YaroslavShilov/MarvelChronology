@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Footer.module.scss';
 
-export function Footer(props) {
+export function Footer() {
 	return (
 		<footer className={s.footer}>
 			<div className="wrap">

@@ -106,8 +106,8 @@ const initialState = [
 	},
 	{
 		title: 'All-New Ultimates',
-		from: 1,
-		till: 4,
+		from: 999,
+		till: 666,
 	},
 ]
 

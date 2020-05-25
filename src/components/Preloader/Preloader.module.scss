@@ -1,0 +1,31 @@
+.wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.items {
+	width: 64px;
+	height: 95px;
+	
+	div {
+		position: relative;
+		box-sizing: border-box;
+		float: left;
+		margin: 0 8px 8px 0;
+		width: 10px;
+		height: 10px;
+		border-radius: 1px;
+		background: white;
+	}
+	div:nth-child(4n+1) { animation: wave 2s ease .0s infinite; }
+	div:nth-child(4n+2) { animation: wave 2s ease .2s infinite; }
+	div:nth-child(4n+3) { animation: wave 2s ease .4s infinite; }
+	div:nth-child(4n+4) { animation: wave 2s ease .6s infinite; margin-right: 0; }
+}
+
+@keyframes wave {
+	0%   { top: 0;     opacity: 1; }
+	50%  { top: 30px;  opacity: .2; }
+	100% { top: 0;     opacity: 1; }
+}

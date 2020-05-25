@@ -1,14 +1,12 @@
-@import 'src/globalStyle/vars';
-
 .app {
 	background: fixed url('./bg.jpg') left top repeat;
 }
 .bg {
-	display: flex;
-	flex-direction: column;
 	min-height: 100vh;
 	background-color: rgba(#000, .9);
 }
 .main {
-	padding: 100px;
+	max-width: 1700px;
+	margin: 0 auto;
+	padding: 100px 50px;
 }

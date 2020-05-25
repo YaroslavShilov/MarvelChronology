@@ -1,3 +1,5 @@
+import {ADD_COMIC_ERROR, ADD_COMIC_SUCCESS} from "../actions/actionTypes";
+
 const initialState = {
 	'Ultimate Spider-Man': [
 		{
@@ -29,8 +31,30 @@ const initialState = {
 	]
 }
 
+function addComic(state, title, comic) {
+	if(!state[title]) {
+		//if we don't have this comics
+		return {...state, [title]: [comic] }
+
+	} else if (state[title].filter(i => i.number === comic.number).length === 0) {
+		//if we have this comics but don't have number of this comics we add it
+		return {...state, [title]: [...state[title], comic]}
+
+	} else {
+		//we already have this comics
+		return state;
+	}
+}
+
 export default function comics(state = initialState, action) {
 	switch (action.type) {
+		case ADD_COMIC_SUCCESS:
+			return addComic(state, action.title, action.comic)
+			
+		case ADD_COMIC_ERROR:
+			return addComic(state, action.title, action.comic)
+		
 		default: return state
 	}
 }
+

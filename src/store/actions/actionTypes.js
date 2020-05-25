@@ -1,0 +1,2 @@
+export const ADD_COMIC_SUCCESS = 'ADD_COMIC_SUCCESS';
+export const ADD_COMIC_ERROR = 'ADD_COMIC_ERROR';

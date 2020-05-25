@@ -1,6 +1,3 @@
-@import 'src/globalStyle/vars';
-@import 'src/globalStyle/mixins';
-
 .item {
 	display: flex;
 	justify-content: flex-end;
@@ -15,7 +12,7 @@
 	align-items: flex-start;
 	width: 600px;
 	padding-right: 150px;
-	color: $title;
+	color: white;
 	&:after {
 		content: "";
 		position: absolute;
@@ -24,7 +21,7 @@
 		z-index: 1;
 		width: 2px;
 		height: 100%;
-		background-color: $title;
+		background-color: white;
 	}
 }
 /*END .main */
@@ -35,13 +32,18 @@
 
 .img {
 	flex: 0 0 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	height: 270px;
-	border: 2px solid $title;
+	border: 2px solid white;
+	background-color: red;
 	overflow: hidden;
-	transition: all $time;
+	transition: all 0.5s ease-in-out;
 	z-index: 2;
 	&:hover {
-		transform: scale(2, 2);
+		transform: scale(1.5, 1.5);
 	}
 	img {
 		width: 100%;
@@ -66,10 +68,11 @@
 	top: 70%;
 	right: -8px;
 	z-index: 2;
-	@include size(16px);
+	width: 16px;
+	height: 16px;
 	background-color: black;
 	border-radius: 50%;
-	box-shadow: inset 0 0 0 3px $title;
+	box-shadow: inset 0 0 0 3px white;
 }
 .arrow {
 	position: absolute;
@@ -78,7 +81,7 @@
 	width: 75px;
 	height: 2px;
 	margin-top: -1px;
-	background-color: $title;
+	background-color: white;
 }
 .arrow:after {
 	content: "";
@@ -88,7 +91,7 @@
 	width: 100px;
 	height: 2px;
 	margin-top: -1px;
-	background-color: $title;
+	background-color: white;
 	border-radius: 3px;
 	transform: rotate(41deg);
 	transform-origin: left center;
